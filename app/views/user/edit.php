@@ -1,21 +1,56 @@
-<!-- app/views/user/edit.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>Edit User</h2>
-    <form action="/user/update/<?php echo $user['id']; ?>" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="<?php echo $user['name']; ?>" required>
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" required>
-        <br>
-        <button type="submit">Update</button>
-    </form>
-    <a href="/user/index">Back to List</a>
+    <form action="/user/update/<?php echo $id_user['id_user']; ?>" method="POST">
+    <div class="flex flex-col items-center justify-center w-full h-screen">
+        <!-- Judul -->
+        <h1 class="text-center text-2xl font-['Roboto'] font-semiold">TAMBAH DATA PENGGUNA</h1>
+
+        <!-- Formulir -->
+        <div class="flex mt-12 items-center justify-center w-full">
+            <img src="../project-mvc/pictures/rb_52233.png" class="w-96 mr-20 mb-20 hidden md:block">
+            <div class="flex flex-col gap-6 w-full max-w-md">
+                <!-- Nama -->
+                <label class="relative flex items-center w-full">
+                    <i class="fas fa-user absolute left-3 text-black"></i>
+                    <input required type="text" name="nama_user" id="nama_user" value="<?php echo $id_user['nama_user']; ?>" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+                    <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Nama</span>
+                </label>
+                <!-- Email -->
+                <label class="relative flex items-center w-full">
+                    <i class="fas fa-envelope  absolute left-3 text-black"></i>
+                    <input required type="email"  name="email" id="email" value="<?php echo $id_user['email']; ?>" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+                    <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Email</span>
+                </label>
+                <!-- Password -->
+                <label class="relative flex items-center w-full">
+                    <i class="fas fa-lock absolute left-3 text-black"></i>
+                    <input required type="password" name="password" id="password" value="<?php echo $id_user['password']; ?>" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+                    <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Password</span>
+                </label>
+                <!-- NPM -->
+                <label class="relative flex items-center w-full">
+                    <i class="fas fa-graduation-cap absolute left-3 text-black"></i>
+                    <input required type="text" pattern="\d*" name="no_anggota" id="no_anggota" value="<?php echo $id_user['no_anggota']; ?>" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg" oninput="this.value=this.value.replace(/\D/g,'')">
+                    <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">NPM</span>
+                </label>
+                <div class="flex gap-4 mt-2 ml-28">
+                    <!-- Tombol Back (Link) -->
+                    <a href="../index" class="w-20 h-9 bg-gray-400 text-white text-sm font-medium rounded-md hover:bg-gray-500 transition duration-300 text-center flex items-center justify-center">Back</a>
+                    <!-- Tombol Add -->
+                    <button class="w-20 h-9 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition duration-300">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 </body>
 </html>
