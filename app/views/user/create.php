@@ -14,10 +14,9 @@
     <div class="flex flex-col items-center justify-center w-full h-screen">
         <!-- Judul -->
         <h1 class="text-center text-2xl font-['Roboto'] font-semiold">TAMBAH DATA PENGGUNA</h1>
-
         <!-- Formulir -->
         <div class="flex mt-12 items-center justify-center w-full">
-            <img src="../project-mvc/pictures/rb_52233.png" class="w-96 mr-20 mb-20 hidden md:block">
+            <img src="../../../../pictures/add.png" class="w-96 mr-20 mb-20 hidden md:block">
             <div class="flex flex-col gap-6 w-full max-w-md">
                 <!-- Nama -->
                 <label class="relative flex items-center w-full">
@@ -45,12 +44,18 @@
                 </label>
                 <div class="flex gap-4 mt-2 ml-28">
                     <!-- Tombol Back (Link) -->
-                    <a href="index" class="w-20 h-9 bg-gray-400 text-white text-sm font-medium rounded-md hover:bg-gray-500 transition duration-300 text-center flex items-center justify-center">Back</a>
+                    <a href="index" class="w-20 h-9 bg-gray-400 text-white text-sm font-medium rounded-md hover:bg-gray-500 transition duration-300 text-center flex items-center justify-center shadow-lg">Back</a>
                     <!-- Tombol Add -->
-                    <button class="w-20 h-9 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition duration-300">Add</button>
+                    <button class="w-20 h-9 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition duration-300 shadow-lg">Add</button>
                 </div>
             </div>
         </div>
+        <div class="fixed bottom-0 w-full h-12 bg-gray-300 rounded-md p-2 shadow-md">
+        <div class="flex justify-center items-center h-full">
+        <footer class="text-xs text-center">
+            <p>© 2024 PWEB2<br><a href="mailto:Kel4@example.com" class="text-blue-600 hover:underline flex items-center gap-1"> kel4@example.com</a></p>
+        </footer>
+    </div>
     </div>
 </body>
 </html>
