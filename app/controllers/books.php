@@ -11,7 +11,7 @@ class BooksController {
 
     public function dashboard() {
         $books = $this->booksModel->getAllBooks();
-        require_once '../app/views/books/dashboard.php';
+        require_once '../app/views/dashboard.php';
 
     }
     public function index() {
