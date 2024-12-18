@@ -2,14 +2,14 @@
 // routes.php
 
 require_once 'app/controllers/LoansController.php';
-// require_once 'app/controllers/PublishersController.php';
-// require_once 'app/controllers/UserController.php';
-// require_once 'app/controllers/Books.php';
+require_once 'app/controllers/PublishersController.php';
+require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/Books.php';
 
-// $controller = new BooksController();
-// $UserController = new UserController();
+$controller = new BooksController();
+$UserController = new UserController();
 $LoansController = new LoansController();
-// $PublishersController = new PublishersController();
+$PublishersController = new PublishersController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 

@@ -14,7 +14,7 @@ class LoansController {
         require_once '../app/views/loans/index.php';
     }
     public function dashboard() {
-        require_once '../app/views/loans/dashboard.php';
+        require_once '../app/views/dashboard.php';
     }
 
 
