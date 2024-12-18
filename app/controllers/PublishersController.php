@@ -11,7 +11,7 @@ class PublishersController {
 
     public function dashboard() {
         $publishers = $this->publishersModel->getAllPublishers();
-        require_once '../app/views/publishers/dashboard.php';
+        require_once '../app/views/dashboard.php';
 
     }
     public function index() {
