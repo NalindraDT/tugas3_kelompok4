@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>Edit Penerbit</h2>
     <form action="/publishers/update/<?php echo $publishers['id_penerbit']; ?>" method="POST">
     <div class="flex flex-col items-center justify-center w-full h-screen">
     <!-- Judul -->
@@ -39,7 +38,7 @@
         </label>
         <div class="flex gap-4 mt-2 ml-28">
             <!-- Tombol Back (Link) -->
-            <a href="publishers/index" class="w-20 h-9 bg-gray-400 text-white text-sm font-medium rounded-md hover:bg-gray-500 transition duration-300 text-center flex items-center justify-center">Back</a>
+            <a href="../index" class="w-20 h-9 bg-gray-400 text-white text-sm font-medium rounded-md hover:bg-gray-500 transition duration-300 text-center flex items-center justify-center">Back</a>
             <!-- Tombol Add -->
             <button type="submit" class="w-20 h-9 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition duration-300">Save</button>
             </div>

@@ -1,7 +1,11 @@
-# Praktikum Pemgrograman Web 2 - Politeknik Negeri Cilacap
+# Praktikum Pemgrograman Web 2 - Sistem Pengelolaan Perpustakaan Digital
 
 ## Informasi Umum
-Proyek ini merupakan bagian dari kegiatan Praktisi Mengajar batch 5, antara [Politeknik Negeri Cilacap](https://pnc.ac.id/) dengan praktisi [I Nyoman Indra Darmawan](https://nyoman.id) untuk mata kuliah Praktikum Pemgrograman Web 2
+Proyek ini merupakan bagian dari Tugas UAS Mata Kuliah Praktikum Pemrograman WEB 2 yang dilakukan oleh kelompok 4 kelas TI-2C Politeknik Negeri Cilacap yang beranggota : <br>
+    1. Amanda Nur Atika [230202051] <br>
+    2. Gerin Nurul Ardriyani [230202061]<br>
+    3. Kristian Dimas Adi Wicaksono [230302065]<br>
+    4. Nalindra Driyawan Thahai [230202070]<br>
 
 ## Deskripsi Proyek
 Proyek ini merupakan aplikasi web sederhana yang menerapkan arsitektur Model-View-Controller (MVC) dengan menggunakan konsep Pemrograman Berorientasi Objek (OOP). Aplikasi ini adalah sebagai contoh yang dapat gunakan sebagai acuan bagi masing-masing kelompok dalam mengerjakan tugas.
