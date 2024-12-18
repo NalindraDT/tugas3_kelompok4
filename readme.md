@@ -1,7 +1,7 @@
 # Praktikum Pemgrograman Web 2 - Politeknik Negeri Cilacap
 
 ## Informasi Umum
-Proyek ini merupakan bagian dari kegiatan Praktisi Mengajar batch 5, antara [Politeknik Negeri Cilacap](https://pnc.ac.id/) dengan praktisi [I Nyoman Indra Darmawan](https://nyoman.id) untuk mata kuliah Praktikum Pemgrograman Web 2
+Proyek ini merupakan bagian dariTugas UAS Mata Kuliah Praktikum Pemrograman Web 2 yang diampu oleh dosen Bapak Prih Diantono Abda'u kegiatan Praktisi Mengajar batch 5, antara [Politeknik Negeri Cilacap](https://pnc.ac.id/) dengan praktisi [I Nyoman Indra Darmawan](https://nyoman.id) untuk mata kuliah Praktikum Pemgrograman Web 2
 
 ## Deskripsi Proyek
 Proyek ini merupakan aplikasi web sederhana yang menerapkan arsitektur Model-View-Controller (MVC) dengan menggunakan konsep Pemrograman Berorientasi Objek (OOP). Aplikasi ini adalah sebagai contoh yang dapat gunakan sebagai acuan bagi masing-masing kelompok dalam mengerjakan tugas.
