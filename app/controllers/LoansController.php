@@ -8,13 +8,12 @@ class LoansController {
     public function __construct() {
         $this->loansModel = new loans();
     }
-
+    
     public function index() {
         $loan = $this->loansModel->getAllLoans();
         require_once '../app/views/loans/index.php';
     }
     public function dashboard() {
-        $loan = $this->loansModel->getAllLoans();
         require_once '../app/views/loans/dashboard.php';
     }
 
