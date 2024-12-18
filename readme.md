@@ -232,3 +232,131 @@ potongan program ini digunakan untuk memunculkan navbar yang berisi kata "WELCOM
 </div>
 ```
 <p>Berbeda dengan form input, pada bagian edit ini terdapat data yang muncul di bagian inputnya.</p>
+
+<h3>Output</h3>
+<img src="Pictures/edit.png">
+<hr>
+
+## User Models
+
+```php
+<?php
+require_once '../config/database.php';
+
+class User {
+    private $db;
+
+    public function __construct(){
+        $this->db = (new Database())->connect();
+    }
+
+    public function getAllUsers(){
+        $query = $this->db->query("SELECT * FROM users");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function findUser($id_user) {
+        $query = $this->db->prepare("SELECT * FROM users WHERE id_user = :id_user");
+        $query->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function addUser($nama_user, $email, $password, $no_anggota){
+        $query = $this->db->prepare("INSERT INTO users (nama_user, email, password, no_anggota) values (:nama_user, :email, :password, :no_anggota)");
+        $query->bindParam(':nama_user', $nama_user);
+        $query->bindParam(':email', $email);
+        $query->bindParam(':password', $password);
+        $query->bindParam(':no_anggota', $no_anggota);
+        return $query->execute();
+    }
+
+    public function updateUser($id_user, $data){
+        $query = "UPDATE users SET nama_user = :nama_user, email = :email, password = :password, no_anggota = :no_anggota WHERE id_user = :id_user";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':nama_user', $data['nama_user']);
+        $stmt->bindParam(':email', $data['email']);
+        $stmt->bindParam(':password', $data['password']);
+        $stmt->bindParam(':no_anggota', $data['no_anggota']);
+        $stmt->bindParam(':id_user', $id_user);
+        return $stmt->execute();
+    }
+
+    public function deleteUser($id_user){
+        $query = "DELETE from users WHERE id_user = :id_user";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id_user', $id_user);
+        return $stmt->execute();
+    }
+}
+```
+
+<p>Potongan program di atas merupakan program pada file User yang ada di folder models dan ini berisi beberapa function untuk memproses semua data yang ada di database, seperti menambah, mengupdate, menghapus, dan mencari data user.</p>
+<hr>
+
+## User Controller
+
+```php
+<?php
+// app/controllers/UserController.php
+require_once '../app/models/User.php';
+
+class UserController {
+    private $userModel;
+
+    public function __construct() {
+        $this->userModel = new User();
+    }
+
+    public function dashboard() {
+        $users = $this->userModel->getAllUsers();
+        require_once '../app/views/dashboard.php';
+
+    }
+
+    public function index() {
+        $users = $this->userModel->getAllUsers();
+        require_once '../app/views/user/index.php';
+
+    }
+
+    public function create() {
+        require_once '../app/views/user/create.php';
+    }
+
+    public function store() {
+        $nama_user = $_POST['nama_user'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $no_anggota = $_POST['no_anggota'];
+        $this->userModel->addUser($nama_user, $email, $password, $no_anggota);
+        header('Location: /user/index');
+    }
+    // Show the edit form with the user data
+    public function edit($id_user) {
+        $id_user = $this->userModel->findUser($id_user);
+        require_once __DIR__ . '/../views/user/edit.php';
+    }
+
+    // Process the update request
+    public function update($id_user, $data) {
+        $updated = $this->userModel->updateUser($id_user, $data);
+        if ($updated) {
+            header("Location: /user/index"); // Redirect to user list
+        } else {
+            echo "Failed to update user.";
+        }
+    }
+
+    // Process delete request
+    public function deleteUser($id_user) {
+        $deleted = $this->userModel->deleteUser($id_user);
+        if ($deleted) {
+            header("Location: /user/index"); // Redirect to user list
+        } else {
+            echo "Failed to delete user.";
+        }
+    }
+}
+```
+<p>Potongan program yang ada di UserController ini digunakan untuk menerima input dari user yang kemudian data tersebut akan diolah menggunakan model lalu mengirimkan kembali data ke view.</p>
