@@ -1,101 +1,362 @@
-# Praktikum Pemgrograman Web 2 - Sistem Pengelolaan Perpustakaan Digital
+## Dashboard
+<p>Dashboard merupakan antarmuka pengguna yang menyajikan informasi penting secara ringkas dan visual, dashboard ini sendiri biasanya dalam bentuk grafik, tabel, atau indikator utama.<br>Dashboard yang ada pada kali ini berisi seperti ucapan selamat datang (Welcome), dan terdapat beberapa card yang di dalamnya berisi sebuah tombol see detail yang nantinya pengguna akan menekan see detail pada salah satu card.</p>
 
-## Informasi Umum
-Proyek ini merupakan bagian dari Tugas UAS Mata Kuliah Praktikum Pemrograman WEB 2 yang dilakukan oleh kelompok 4 kelas TI-2C Politeknik Negeri Cilacap yang beranggota : <br>
-    1. Amanda Nur Atika [230202051] <br>
-    2. Gerin Nurul Ardriyani [230202061]<br>
-    3. Kristian Dimas Adi Wicaksono [230302065]<br>
-    4. Nalindra Driyawan Thahai [230202070]<br>
-Proyek ini merupakan bagian dariTugas UAS Mata Kuliah Praktikum Pemrograman Web 2 yang diampu oleh dosen Bapak Prih Diantono Abda'u kegiatan Praktisi Mengajar batch 5, antara [Politeknik Negeri Cilacap](https://pnc.ac.id/) dengan praktisi [I Nyoman Indra Darmawan](https://nyoman.id) untuk mata kuliah Praktikum Pemgrograman Web 2
-Proyek ini merupakan bagian dariTugas UAS Mata Kuliah Praktikum Pemrograman Web 2 yang diampu oleh dosen Bapak Prih Diantono Abda'u, M.Kom.  yang dilakukan oleh kelompok 4 kelas TI 2C Politeknik Negeri Cilacap
+<h4> - Navbar</h4>
 
-## Deskripsi Proyek
-Proyek ini merupakan Sistem Pengelolaan Perpustakaan Digital berbasis web yang dirancang menggunakan arsitektur Model-View-Controller (MVC) dengan menerapkan konsep Pemrograman Berorientasi Objek (OOP). Aplikasi ini bertujuan untuk mempermudah pengelolaan koleksi buku, pengguna, serta aktivitas peminjaman dan pengembalian dalam perpustakaan secara digital.
-
-## Tujuan
-Tujuan dari praktikum ini adalah untuk memberikan pemahaman yang lebih baik tentang arsitektur MVC dalam pengembangan aplikasi web dan untuk meningkatkan kemampuan mahasiswa dalam menerapkan konsep OOP serta melakukan operasi CRUD (Create, Read, Update, Delete) pada data. 
-
-## Tech Stack
-- **Bahasa Pemrograman:** PHP
-- **Database:** MySQL
-- **Frontend:** HTML, CSS, JavaScript
-- **Version Control:** Git (GitLab)
-- **Web Server:** Apache (dengan .htaccess untuk pengaturan URL)
-
-## Struktur Proyek
-```plaintext
-mvc-sample/
-├── app/
-│   ├── controllers/
-│   │   └── UserController.php         # Controller untuk mengelola logika pengguna
-│   ├── models/
-│   │   └── User.php                   # Model untuk mengelola data pengguna
-│   └── views/
-│       └── user/
-│           ├── index.php              # View untuk menampilkan daftar dan manajemen pengguna
-│           ├── edit.php               # Edit untuk menampilkan halaman edit pengguna            
-│           └── create.php             # View untuk menampilkan form pembuatan pengguna baru
-├── config/
-│   └── database.php                   # Konfigurasi database
-├── public/
-│   ├── .htaccess                      # Pengaturan URL rewrite
-│   └── index.php                      # Entry point aplikasi
-├── .htaccess                          # Pengaturan URL rewrite
-└── routes.php                         # Mendefinisikan rute untuk aplikasi
+```html
+<div class="w-11/12 bg-gray-300 rounded-md p-3 shadow-md">
+    <h2 class="text-center text-black font-semibold text-2xl">WELCOME</h2>
+</div>
 ```
 
-## Cara Menjalankan Proyek
-1. **Clone Repository:**
-   ```bash
-   git clone https://gitlab.com/praktisi-mengajar/politeknik-negeri-cilacap/pemrograman-web/mvc-sample.git
-   cd mvc-sample
-   ```
-2. **Jika menggunakan virtual host pada apache xampp:**
-   Untuk menjalankan proyek ini pada Apache XAMPP, Anda perlu membuat virtual host:
+potongan program ini digunakan untuk memunculkan navbar yang berisi kata "WELCOME".
 
-   - Edit File Konfigurasi Apache: Buka file httpd-vhosts.conf di lokasi berikut:
-        ```php 
-        C:\xampp\apache\conf\extra\httpd-vhosts.conf 
-        ```
-   - Tambahkan Konfigurasi Virtual Host: Tambahkan konfigurasi berikut di bagian bawah file:
-        ```php 
-        <VirtualHost *:80>
-            DocumentRoot "C:/xampp/htdocs/mvc-sample/public"
-            ServerName mvc-sample.local
-            <Directory "C:/xampp/htdocs/mvc-sample/public">
-                AllowOverride All
-                Require all granted
-            </Directory>
-        </VirtualHost>
-        ```
-    - Edit File Hosts: Tambahkan entri baru pada file hosts di sistem windows :
-        ```plaintext
-        C:\Windows\System32\drivers\etc\hosts
-        ```
+<h4> - Card </h4>
 
-    - Tambahkan baris berikut di bagian bawah:
-        ```php 
-        127.0.0.1 mvc-sample.local
-        ```
+```html
+<div class="flex justify-center items-center min-h-[72vh] space-x-20">
+<!-- Col 1 -->
+<div class="w-72 h-96 bg-gray-300 rounded-md p-3 shadow-md shadow-md hover:shadow-lg hover:scale-105 transition duration-300">
+    <div class="flex justify-center">
+        <img class="w-32" src="../../../../pictures/guest.png">
+        </div>
+        <p class="text-gray-600 text-sm mt-2">Manajemen Anggota Perpustakaan:  kelola data anggota seperti nama, email, password, dan nomor anggota</p>
+        <h3 class="text-center text-black mt-12 font-semibold text-2xl">User</h3>
+        <button class="w-24 h-8 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 mt-12"><a href="/user/index">See Details</a></button>
+    </div>
+<!-- Col 2 -->
+    <div class="w-72 h-96 bg-gray-300 rounded-md p-3 shadow-md shadow-md hover:shadow-lg hover:scale-105 transition duration-300">
+        <div class="flex justify-center">
+            <img class="w-32" src="./../pictures/books.png">
+        </div>
+        <p class="text-gray-600 text-sm mt-2">Kelola Data Buku Perpustakaan: Tambah, ubah, hapus, dan kelola data buku seperti judul, penulis,tahun terbit, dan genre.</p>
+        <h3 class="text-center text-black mt-12 font-semibold text-2xl">Books</h3>
+        <button class="w-24 h-8 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 mt-12">See Details</button>
+    </div>
+<!-- Col 3 -->
+    <div class="w-72 h-96 bg-gray-300 rounded-md p-3 shadow-md shadow-md hover:shadow-lg hover:scale-105 transition duration-300">
+        <div class="flex justify-center">
+            <img class="w-32" src="/pictures/person.png">
+        </div>
+        <p class="text-gray-600 text-sm mt-2">Kelola Data Penerbit Buku: Tambah, ubah, hapus, dan kelola data penerbit seperti nama penerbit, alamat, dan kontak penerbit.</p>
+        <h3 class="text-center text-black mt-8 font-semibold text-2xl">Publisher</h3>
+        <button class="w-24 h-8 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 mt-11">See Details</button>
+    </div>
+    <!-- Col 4 -->
+    <div class="w-72 h-96 bg-gray-300 rounded-md p-3 shadow-md shadow-md hover:shadow-lg hover:scale-105 transition duration-300">
+        <div class="flex justify-center">
+            <img class="w-28" src="/pictures/hand.png">
+        </div>
+        <p class="text-gray-600 text-sm mt-2">Kelola Data Peminjaman Buku: Tambah, ubah, hapus, dan kelola data peminjaman buku seperti nama peminjam, judul buku, tanggal peminjaman, dan tanggal pengembalian.</p>
+        <h3 class="text-center text-black mt-1 font-semibold text-2xl">Loans</h3>
+        <button class="w-24 h-8 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 mt-11">See Details</button>
+    </div>
+</div>
+```
+<p>Potongan program di atas ini digunakan untuk membuat card yang berada di bagian bawah navbar, card ini juga digunakan untuk pengguna memilih untuk menuju ke halaman yang lain.</p>
 
-    - Restart Apache: Setelah konfigurasi selesai, restart Apache melalui XAMPP Control Panel.
+<h4> - Footer </h4>
 
-    - Akses Proyek: Buka browser dan akses aplikasi di http://mvc-sample.local.
+```html
+<div class="fixed bottom-0 w-full h-12 bg-gray-300 rounded-md p-2 shadow-md">
+        <div class="flex justify-center items-center h-full">
+            <footer class="text-xs text-center">
+                <p>© 2024 PWEB2<br><a href="mailto:Kel4@example.com" class="text-blue-600 hover:underline flex items-center gap-1"> kel4@example.com</a></p>
+            </footer>
+        </div>
+    </div>
+```
 
-3. **Jika menggunakan perintah php -S localhost:8080:**
-    Saat menjalankan aplikasi PHP dengan perintah ```php -S localhost:8080```
-    server built-in PHP hanya memahami struktur dasar dan tidak mendukung pengaturan URL rewriting seperti pada file ```.htaccess``` di Apache. Oleh karena itu, aplikasi tidak dapat menangani rute dinamis dengan benar dan akan menampilkan ```"Not Found"``` saat mengakses URL selain ```index.php``` langsung.
+<p> Potongan program di atas digunakan untuk membuat footer pada sebuah halaman website.</p>
 
-    Langkah yang harus diikuti:
-    - Navigasi ke direktori ```mvc-sample``` dan jalankan server dari dalam folder ```public```, agar ```index.php``` langsung menjadi entry point untuk aplikasi:
-        ```php
-        cd mvc-sample/public
-        php -S localhost:8080
-        ```
-    - Akses Proyek: Buka browser dan akses aplikasi di ```localhost:8080```.
+<h3> Output </h3>
+<img src="Pictures/Dashboard.png">
 
-## Kontribusi
-Jika ingin berkontribusi pada proyek ini, silakan buat branch baru dan kirim pull request.
+<hr>
 
-## Lisensi
-Proyek ini dilisensikan under MIT License.
+## Index
+
+<p>Pada bagian Index ini berisi tabel Data User yang terdiri dari Nama, Email, Password, dan NPM.</p>
+
+<h4> - Add & Search</h4>
+
+```html
+<div class="mt-24 w-3/4">
+    <div class="flex justify-end gap-2 items-center">
+        <a href="/user/create" class="px-5 py-3 bg-blue-500 text-white font-semibold text-sm rounded-lg hover:bg-blue-600 transition duration-300"><i class="fa fa-plus mr-2"></i>Add</a>
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="Cari data..." class="w-48 pl-10 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                    <i class="fas fa-search"></i>
+                    </span>
+            </div>
+    </div>
+</div>
+```
+
+<p>Potongan program di atas digunakan untuk menambahkan dan mencari data yang ada pada tabel. </p>
+
+<h4> - Tabel</h4>
+
+```html
+<table id="users" class="mt-2 table-auto w-3/4 rounded-lg shadow-lg overflow-hidden text-sm text-left">
+    <thead>
+        <tr class="bg-gray-300 justify-center">
+            <th class="px-4 py-2 text-center">Nama</th>
+            <th class="px-4 py-2 text-center">Email</th>
+             <th class="px-4 py-2 text-center">Password</th>
+            <th class="px-4 py-2 text-center">NPM</th>
+            <th class="px-4 py-2 text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($users as $user): ?>
+            <tr class="odd:bg-gray-100 even:bg-gray-200 hover:bg-gray-300 border-b border-gray-300">
+                <td class="px-4 py-2 text-center"><?= htmlspecialchars($user['nama_user']) ?></td>
+                <td class="px-4 py-2 text-center"><?= htmlspecialchars($user['email']) ?></td>
+                <td class="px-4 py-2 text-center"><?= htmlspecialchars($user['password']) ?></td>
+                <td class="px-4 py-2 text-center"><?= htmlspecialchars($user['no_anggota']) ?></td>
+                <td class="px-4 py-2 text-center">
+                    <a href="/user/edit/<?php echo $user['id_user']; ?>" class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold text-sm rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"><i class="fa fa-pen mr-2"></i>Edit</a>
+                    <a href="/user/delete/<?php echo $user['id_user']; ?>" id="delete" class="inline-block px-4 py-2 bg-red-500 text-white font-semibold text-sm rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"><i class="fa fa-trash mr-2"></i>Delete</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+```
+<p>Potongan program di atas digunakan untuk membuat tabel, membaca data dari database yang ada dan menambahkan button untuk edit dan hapus pada suatu data yang ada.</p>
+
+<h4> - Footer</h4>
+
+```html
+<div class="fixed bottom-0 w-full h-12 bg-gray-300 rounded-md p-2 shadow-md">
+    <div class="flex justify-center items-center h-full">
+        <footer class="text-xs text-center">
+            <p>© 2024 PWEB2<br><a href="mailto:Kel4@example.com" class="text-blue-600 hover:underline flex items-center gap-1"> kel4@example.com</a></p>
+        </footer>
+    </div>
+</div>
+```
+
+<h4>Potongan program di atas digunakan untuk membuat footer sebuah halaman website</h4>
+
+<h3>Output</h3>
+<img src="pictures/index.png">
+<hr>
+
+## Create
+<p>Create ini digunakan untuk menambahkan data user seperti nama, email, password, dan no anggota(NPM)</p>
+
+```html
+<!-- Nama -->
+<label class="relative flex items-center w-full">
+    <i class="fas fa-user absolute left-3 text-black"></i>
+    <input required type="text" name="nama_user" id="nama_user" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+    <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Nama</span>
+</label>
+
+<!-- Email -->
+<label class="relative flex items-center w-full">
+    <i class="fas fa-envelope  absolute left-3 text-black"></i>
+    <input required type="email"  name="email" id="email" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+    <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Email</span>
+</label>
+
+<!-- Password -->
+<label class="relative flex items-center w-full">
+    <i class="fas fa-lock absolute left-3 text-black"></i>
+    <input required type="password" name="password" id="password" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+    <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Password</span>
+</label>
+
+<!-- NPM -->
+<label class="relative flex items-center w-full">
+    <i class="fas fa-graduation-cap absolute left-3 text-black"></i>
+    <input required type="text" pattern="\d*" name="no_anggota" id="no_anggota"  class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg" oninput="this.value=this.value.replace(/\D/g,'')">
+    <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">NPM</span>
+</label>
+```
+<p>Di atas ini merupakan potongan program untuk menambah form input data.</p>
+
+<h3>Output</h3>
+<img src="pictures/create.png">
+
+<hr>
+
+## Edit
+<p>Edit ini digunakan untuk mengubah data user seperti nama, email, password, dan no anggota(NPM)</p>
+
+```html
+<div class="flex mt-12 items-center justify-center w-full">
+    <img src="../../../../pictures/add.png" class="w-96 mr-20 mb-20 hidden md:block">
+    <div class="flex flex-col gap-6 w-full max-w-md">
+        <!-- Nama -->
+        <label class="relative flex items-center w-full">
+            <i class="fas fa-user absolute left-3 text-black"></i>
+            <input required type="text" name="nama_user" id="nama_user" value="<?php echo $id_user['nama_user']; ?>" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+            <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Nama</span>
+        </label>
+        <!-- Email -->
+        <label class="relative flex items-center w-full">
+            <i class="fas fa-envelope  absolute left-3 text-black"></i>
+            <input required type="email"  name="email" id="email" value="<?php echo $id_user['email']; ?>" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+            <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Email</span>
+        </label>
+        <!-- Password -->
+        <label class="relative flex items-center w-full">
+            <i class="fas fa-lock absolute left-3 text-black"></i>
+            <input required type="password" name="password" id="password" value="<?php echo $id_user['password']; ?>" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg">
+            <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">Password</span>
+        </label>
+        <!-- NPM -->
+        <label class="relative flex items-center w-full">
+            <i class="fas fa-graduation-cap absolute left-3 text-black"></i>
+            <input required type="text" pattern="\d*" name="no_anggota" id="no_anggota" value="<?php echo $id_user['no_anggota']; ?>" class="w-72 pr-3 pl-8 py-2 h-12 text-sm outline-none border-2 border-black rounded-lg hover:border-gray-600 duration-200 peer focus:border-indigo-600 bg-inherit shadow-lg" oninput="this.value=this.value.replace(/\D/g,'')" maxlength="10">
+            <span class="absolute left-6 top-3 px-1 text-m tracking-wide peer-focus:text-indigo-600 pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5">NPM</span>
+        </label>
+        <div class="flex gap-4 mt-2 ml-28">
+            <!-- Tombol Back (Link) -->
+            <a href="../index" class="w-20 h-9 bg-gray-400 text-white text-sm font-medium rounded-md hover:bg-gray-500 transition duration-300 text-center flex items-center justify-center">Back</a>
+            <!-- Tombol Add -->
+            <button type="submit" class="w-20 h-9 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition duration-300">Save</button>
+        </div>
+    </div>
+    <div class="fixed bottom-0 w-full h-12 bg-gray-300 rounded-md p-2 shadow-md">
+        <div class="flex justify-center items-center h-full">
+            <footer class="text-xs text-center">
+                <p>© 2024 PWEB2<br><a href="mailto:Kel4@example.com" class="text-blue-600 hover:underline flex items-center gap-1"> kel4@example.com</a></p>
+            </footer>
+        </div>
+    </div>
+</div>
+```
+<p>Berbeda dengan form input, pada bagian edit ini terdapat data yang muncul di bagian inputnya.</p>
+
+<h3>Output</h3>
+<img src="Pictures/edit.png">
+<hr>
+
+## User Models
+
+```php
+<?php
+require_once '../config/database.php';
+
+class User {
+    private $db;
+
+    public function __construct(){
+        $this->db = (new Database())->connect();
+    }
+
+    public function getAllUsers(){
+        $query = $this->db->query("SELECT * FROM users");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function findUser($id_user) {
+        $query = $this->db->prepare("SELECT * FROM users WHERE id_user = :id_user");
+        $query->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function addUser($nama_user, $email, $password, $no_anggota){
+        $query = $this->db->prepare("INSERT INTO users (nama_user, email, password, no_anggota) values (:nama_user, :email, :password, :no_anggota)");
+        $query->bindParam(':nama_user', $nama_user);
+        $query->bindParam(':email', $email);
+        $query->bindParam(':password', $password);
+        $query->bindParam(':no_anggota', $no_anggota);
+        return $query->execute();
+    }
+
+    public function updateUser($id_user, $data){
+        $query = "UPDATE users SET nama_user = :nama_user, email = :email, password = :password, no_anggota = :no_anggota WHERE id_user = :id_user";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':nama_user', $data['nama_user']);
+        $stmt->bindParam(':email', $data['email']);
+        $stmt->bindParam(':password', $data['password']);
+        $stmt->bindParam(':no_anggota', $data['no_anggota']);
+        $stmt->bindParam(':id_user', $id_user);
+        return $stmt->execute();
+    }
+
+    public function deleteUser($id_user){
+        $query = "DELETE from users WHERE id_user = :id_user";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id_user', $id_user);
+        return $stmt->execute();
+    }
+}
+```
+
+<p>Potongan program di atas merupakan program pada file User yang ada di folder models dan ini berisi beberapa function untuk memproses semua data yang ada di database, seperti menambah, mengupdate, menghapus, dan mencari data user.</p>
+<hr>
+
+## User Controller
+
+```php
+<?php
+// app/controllers/UserController.php
+require_once '../app/models/User.php';
+
+class UserController {
+    private $userModel;
+
+    public function __construct() {
+        $this->userModel = new User();
+    }
+
+    public function dashboard() {
+        $users = $this->userModel->getAllUsers();
+        require_once '../app/views/dashboard.php';
+
+    }
+
+    public function index() {
+        $users = $this->userModel->getAllUsers();
+        require_once '../app/views/user/index.php';
+
+    }
+
+    public function create() {
+        require_once '../app/views/user/create.php';
+    }
+
+    public function store() {
+        $nama_user = $_POST['nama_user'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $no_anggota = $_POST['no_anggota'];
+        $this->userModel->addUser($nama_user, $email, $password, $no_anggota);
+        header('Location: /user/index');
+    }
+    // Show the edit form with the user data
+    public function edit($id_user) {
+        $id_user = $this->userModel->findUser($id_user);
+        require_once __DIR__ . '/../views/user/edit.php';
+    }
+
+    // Process the update request
+    public function update($id_user, $data) {
+        $updated = $this->userModel->updateUser($id_user, $data);
+        if ($updated) {
+            header("Location: /user/index"); // Redirect to user list
+        } else {
+            echo "Failed to update user.";
+        }
+    }
+
+    // Process delete request
+    public function deleteUser($id_user) {
+        $deleted = $this->userModel->deleteUser($id_user);
+        if ($deleted) {
+            header("Location: /user/index"); // Redirect to user list
+        } else {
+            echo "Failed to delete user.";
+        }
+    }
+}
+```
+<p>Potongan program yang ada di UserController ini digunakan untuk menerima input dari user yang kemudian data tersebut akan diolah menggunakan model lalu mengirimkan kembali data ke view.</p>
