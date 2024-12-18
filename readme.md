@@ -93,3 +93,13 @@ Jika ingin berkontribusi pada proyek ini, silakan buat branch baru dan kirim pul
 
 ## Lisensi
 Proyek ini dilisensikan under MIT License.
+#
+
+
+
+
+# Sistem Pengelolaan Perpustakaan Digital
+
+## Deskripsi Proyek 
+Proyek ini merupakan Sistem Pengelolaan Perpustakaan Digital berbasis web yang dirancang menggunakan arsitektur Model-View-Controller (MVC) dengan menerapkan konsep Pemrograman Berorientasi Objek (OOP). Aplikasi ini bertujuan untuk mempermudah pengelolaan koleksi buku, pengguna, serta aktivitas peminjaman dan pengembalian dalam perpustakaan secara digital.
+
