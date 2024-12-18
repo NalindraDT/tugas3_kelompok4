@@ -7,6 +7,7 @@ Proyek ini merupakan bagian dari Tugas UAS Mata Kuliah Praktikum Pemrograman WEB
     3. Kristian Dimas Adi Wicaksono [230302065]<br>
     4. Nalindra Driyawan Thahai [230202070]<br>
 Proyek ini merupakan bagian dariTugas UAS Mata Kuliah Praktikum Pemrograman Web 2 yang diampu oleh dosen Bapak Prih Diantono Abda'u kegiatan Praktisi Mengajar batch 5, antara [Politeknik Negeri Cilacap](https://pnc.ac.id/) dengan praktisi [I Nyoman Indra Darmawan](https://nyoman.id) untuk mata kuliah Praktikum Pemgrograman Web 2
+Proyek ini merupakan bagian dariTugas UAS Mata Kuliah Praktikum Pemrograman Web 2 yang diampu oleh dosen Bapak Prih Diantono Abda'u, M.Kom.  yang dilakukan oleh kelompok 4 kelas TI 2C Politeknik Negeri Cilacap
 
 ## Deskripsi Proyek
 Proyek ini merupakan Sistem Pengelolaan Perpustakaan Digital berbasis web yang dirancang menggunakan arsitektur Model-View-Controller (MVC) dengan menerapkan konsep Pemrograman Berorientasi Objek (OOP). Aplikasi ini bertujuan untuk mempermudah pengelolaan koleksi buku, pengguna, serta aktivitas peminjaman dan pengembalian dalam perpustakaan secara digital.
