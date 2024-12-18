@@ -1,8 +1,10 @@
 <?php
 // routes.php
 
-require_once 'app/controllers/LoansController.php';
+
 require_once 'app/controllers/PublishersController.php';
+require_once 'app/controllers/LoansController.php';
+
 require_once 'app/controllers/UserController.php';
 require_once 'app/controllers/Books.php';
 
@@ -13,24 +15,8 @@ $PublishersController = new PublishersController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-if ($url == '/loans/dashboard' || $url == '/') {
-    $LoansController->dashboard();
-} elseif ($url == '/loans/index' && $requestMethod == 'GET') {
-    $LoansController->index();
-} elseif ($url == '/loans/create' && $requestMethod == 'GET') {
-    $LoansController->create();
-} elseif ($url == '/loans/store' && $requestMethod == 'POST') {
-    $LoansController->store();
-} elseif (preg_match('/\/loans\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $loansId = $matches[1];
-    $LoansController->edit($loansId);
-} elseif (preg_match('/\/loans\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
-    $loansId = $matches[1];
-    $LoansController->update($loansId, $_POST);
-} elseif (preg_match('/\/loans\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $loansId = $matches[1];
-    $LoansController->delete($loansId);
-}elseif ($url == '/publishers/dashboard' || $url == '/') {
+
+if ($url == '/publishers/dashboard' || $url == '/') {
     $PublishersController->dashboard();
 } elseif ($url == '/publishers/index' && $requestMethod == 'GET') {
     $PublishersController->index();
@@ -47,6 +33,25 @@ if ($url == '/loans/dashboard' || $url == '/') {
 } elseif (preg_match('/\/publishers\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $publishersId = $matches[1];
     $PublishersController->delete($publishersId);
+} elseif ($url == '/loans/dashboard' || $url == '/') {
+
+    $LoansController->dashboard();
+} elseif ($url == '/loans/index' && $requestMethod == 'GET') {
+    $LoansController->index();
+} elseif ($url == '/loans/create' && $requestMethod == 'GET') {
+    $LoansController->create();
+} elseif ($url == '/loans/store' && $requestMethod == 'POST') {
+    $LoansController->store();
+} elseif (preg_match('/\/loans\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $loansId = $matches[1];
+    $LoansController->edit($loansId);
+} elseif (preg_match('/\/loans\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
+    $loansId = $matches[1];
+    $LoansController->update($loansId, $_POST);
+} elseif (preg_match('/\/loans\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $loansId = $matches[1];
+    $LoansController->delete($loansId);
+
 } elseif ($url == '/user/dashboard' || $url == '/') {
     $UserController->dashboard();
 } elseif ($url == '/user/index' && $requestMethod == 'GET') {
