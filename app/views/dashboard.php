@@ -22,8 +22,8 @@
     }
 </style>
 <body class="flex justify-center items-center mt-5 bg-gray-200">
-    <!-- Content -->
-    <div class="flex flex-col z-1 w-full items-center gap-5">  
+<!-- Content -->
+<div class="flex flex-col z-1 w-full items-center gap-5">  
     <!-- Selamat Datang -->
     <div class="w-11/12 bg-gray-300 rounded-md p-3 shadow-md">
         <h2 class="text-center text-black font-semibold text-2xl">WELCOME</h2>
@@ -37,7 +37,7 @@
             </div>
             <p class="text-gray-600 text-sm mt-2">Manajemen Anggota Perpustakaan:  kelola data anggota seperti nama, email, password, dan nomor anggota</p>
             <h3 class="text-center text-black mt-12 font-semibold text-2xl">User</h3>
-            <button class="w-24 h-8 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 mt-12">See Details</button>
+            <button class="w-24 h-8 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 mt-12"><a href="/user/index">See Details</a></button>
         </div>
 
     <!-- Col 2 -->

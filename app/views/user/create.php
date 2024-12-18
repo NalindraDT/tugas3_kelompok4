@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="/user/store" method="post">
+<form action="/user/store" method="post">
     <div class="flex flex-col items-center justify-center w-full h-screen">
         <!-- Judul -->
         <h1 class="text-center text-2xl font-['Roboto'] font-semiold">TAMBAH DATA PENGGUNA</h1>
@@ -51,11 +51,13 @@
             </div>
         </div>
         <div class="fixed bottom-0 w-full h-12 bg-gray-300 rounded-md p-2 shadow-md">
-        <div class="flex justify-center items-center h-full">
-        <footer class="text-xs text-center">
-            <p>© 2024 PWEB2<br><a href="mailto:Kel4@example.com" class="text-blue-600 hover:underline flex items-center gap-1"> kel4@example.com</a></p>
-        </footer>
+            <div class="flex justify-center items-center h-full">
+                <footer class="text-xs text-center">
+                    <p>© 2024 PWEB2<br><a href="mailto:Kel4@example.com" class="text-blue-600 hover:underline flex items-center gap-1"> kel4@example.com</a></p>
+                </footer>
+            </div>
+        </div>
     </div>
-    </div>
+</form>
 </body>
 </html>

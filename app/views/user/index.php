@@ -68,7 +68,7 @@
             </tbody>
         </table>
         <div class="mt-2 flex justify-between w-3/4">
-            <a href="../user/dashboard" class="w-20 h-9 bg-gray-500 text-white text-sm font-medium rounded-md hover:bg-gray-600 transition duration-300 text-center flex items-center justify-center"><i class="fa fa-arrow-left mr-2"></i>Back</a>
+            <a href="./dashboard" class="w-20 h-9 bg-gray-500 text-white text-sm font-medium rounded-md hover:bg-gray-600 transition duration-300 text-center flex items-center justify-center"><i class="fa fa-arrow-left mr-2"></i>Back</a>
             <div id="pagination" class="flex gap-2"></div>
         </div>
         <div class="fixed bottom-0 w-full h-12 bg-gray-300 rounded-md p-2 shadow-md">

@@ -11,7 +11,7 @@ class UserController {
 
     public function dashboard() {
         $users = $this->userModel->getAllUsers();
-        require_once '../app/views/user/dashboard.php';
+        require_once '../app/views/dashboard.php';
 
     }
 
