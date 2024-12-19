@@ -588,13 +588,13 @@ class PublishersController {
 # TABEL PUBLISHERS
 
 ## Halaman Utama
-![alt text](<Screenshot 2024-12-19 131847.png>) 
+![alt text](</Pictures/Screenshot 2024-12-19 131847.png>) 
 
 ## Tampilan Daftar Data Penerbit
-![alt text](<Screenshot 2024-12-19 132232.png>)
+![alt text](</Pictures/Screenshot 2024-12-19 132232.png>)
 
 ## Tampilan Tambah Data Penerbit
-![alt text](<Screenshot 2024-12-19 132406.png>)
+![alt text](</Pictures/Screenshot 2024-12-19 132406.png>)
 
 ## Tampilan Edit Data Penerbit
-![alt text](<Screenshot 2024-12-19 132539.png>)
+![alt text](</Pictures/Screenshot 2024-12-19 132539.png>)
