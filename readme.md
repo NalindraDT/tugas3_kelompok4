@@ -38,9 +38,10 @@ mvc-sample/
 └── routes.php                         # Mendefinisikan rute untuk aplikasi
 ```
 ## Database 2C_klp4 Table Books
-![Screenshot 2024-12-18 224918](https://github.com/user-attachments/assets/223be349-607d-4b34-a57d-5b2eed89b56c)
+![alt text](</Pictures/Screenshot 2024-12-18 224918.png>)
+
 ## Output dashboard
-![alt text](<Screenshot 2024-12-19 132709-1.png>)
+![alt text](</Pictures/Screenshot 2024-12-19 132709-1.png>)
 
 ### Deskripsi table books
 Tabel ini digunakan untuk menyimpan data buku dalam sebuah sistem basis data MySQL. Berikut adalah penjelasan mengenai kolom-kolom dalam tabel ini.
@@ -493,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </html>
 ``` 
 ### Output Books Index
-![alt text](<Screenshot 2024-12-19 133429.png>)
+![alt text](</Pictures/Screenshot 2024-12-19 133429.png>)
 ### Deskripsi
 Proyek ini adalah aplikasi web sederhana yang menampilkan daftar buku menggunakan HTML, CSS (Tailwind CSS), JavaScript, dan PHP. 
 Proyek ini mendukung fitur CRUD (Create, Read, Update, Delete) serta fitur pencarian, paginasi, dan konfirmasi hapus data.
@@ -589,7 +590,7 @@ Fitur pencarian untuk memfilter data buku berdasarkan teks yang dimasukkan.
 </html>
 ```
 ### Output Tambah data buku
-![alt text](image.png)       
+![alt text](/Pictures/image.png)       
 ### Deskripsi 
 Form "Tambah Buku" adalah antarmuka pengguna yang dibuat untuk menambahkan entri buku baru ke dalam sistem. Form ini dibangun menggunakan HTML dan didesain dengan Tailwind CSS. Form ini menyediakan antarmuka yang responsif dan ramah pengguna, memungkinkan pengguna untuk memasukkan detail buku dan mengirimkan data ke endpoint server yang ditentukan.
 ### Fungsi Utama
@@ -724,7 +725,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </html>
 ```
 ### Output Edit buku
-![alt text](<Screenshot 2024-12-19 133730.png>)
+![alt text](</Pictures/Screenshot 2024-12-19 133730.png>)
 ### Deskripsi
 Form "Edit Buku" adalah antarmuka pengguna untuk memperbarui entri buku yang sudah ada dalam sistem. Form ini dirancang untuk memberikan pengalaman pengguna yang intuitif dengan validasi dan interaktivitas yang memadai.
 ### Fungsi Utama
