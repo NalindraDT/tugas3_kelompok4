@@ -1,10 +1,12 @@
 <?php
 // routes.php
 
+
+require_once 'app/controllers/PublishersController.php';
 require_once 'app/controllers/LoansController.php';
-// require_once 'app/controllers/PublishersController.php';
-// require_once 'app/controllers/UserController.php';
-// require_once 'app/controllers/Books.php';
+
+require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/Books.php';
 
 // $controller = new BooksController();
 // $UserController = new UserController();
