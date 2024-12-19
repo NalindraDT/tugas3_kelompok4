@@ -15,7 +15,7 @@ Tujuan dari praktikum ini adalah untuk memberikan pemahaman yang lebih baik tent
 Tabel ini digunakan untuk mencatat informasi tentang penerbit buku. Data dalam tabel ini memuat nama penerbit, informasi kontak, dan alamat, sehingga perpustakaan dapat dengan mudah melacak sumber buku yang diterbitkan. Informasi penerbit sering kali digunakan untuk keperluan pencatatan administrasi atau saat ingin menambah koleksi baru. Hubungan antara tabel penerbit dengan tabel buku memastikan setiap koleksi buku memiliki data penerbit yang valid, memudahkan dalam pengelolaan dan pelaporan koleksi. 
 <br>
 
-## 2. 
+## 2. Models
 Script di bawah digunakan untuk mengelola data dalam tabel `publishers` pada database. Kelas ini terhubung ke database melalui konfigurasi di file eksternal dan menyediakan metode CRUD (Create, Read, Update, Delete). Metode `getAllPublishers` mengambil semua data penerbit, sedangkan `find` mencari data berdasarkan ID tertentu. Metode `add` digunakan untuk menambahkan data penerbit baru, sementara `update` memperbarui data penerbit berdasarkan ID, dan `delete` menghapus data penerbit berdasarkan ID. Seluruh operasi menggunakan PDO (PHP Data Objects) dengan parameter yang di-bind untuk menjaga keamanan dari SQL injection.
 ``` <?php
 // app/models/Publishers.php
@@ -71,7 +71,7 @@ class Publishers {
 }
 ```
 
-## 3.
+## 3. Controllers
 Script di bawah ini adalah kelas `PublishersController` yang merupakan bagian dari pola arsitektur MVC (Model-View-Controller), bertugas menangani logika aplikasi terkait pengelolaan data penerbit. Controller ini menggunakan model `Publishers` untuk berinteraksi dengan database dan menyediakan berbagai metode seperti `dashboard` dan `index` untuk menampilkan data penerbit, `create` untuk memuat formulir penambahan data, `store` untuk menyimpan data baru, serta `edit` dan `update` untuk mengedit data yang sudah ada. Selain itu, terdapat metode `delete` untuk menghapus data penerbit berdasarkan ID. Controller ini juga mengarahkan pengguna ke halaman yang sesuai setelah setiap operasi, memisahkan logika bisnis dari tampilan (View) dengan memuat file tampilan yang relevan.
 ``` <?php
 // app/controllers/PublishersController.php
