@@ -15,26 +15,7 @@ $PublishersController = new PublishersController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-
-if ($url == '/publishers/dashboard' || $url == '/') {
-    $PublishersController->dashboard();
-} elseif ($url == '/publishers/index' && $requestMethod == 'GET') {
-    $PublishersController->index();
-} elseif ($url == '/publishers/create' && $requestMethod == 'GET') {
-    $PublishersController->create();
-} elseif ($url == '/publishers/store' && $requestMethod == 'POST') {
-    $PublishersController->store();
-} elseif (preg_match('/\/publishers\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $publishersId = $matches[1];
-    $PublishersController->edit($publishersId);
-} elseif (preg_match('/\/publishers\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
-    $publishersId = $matches[1];
-    $PublishersController->update($publishersId, $_POST);
-} elseif (preg_match('/\/publishers\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $publishersId = $matches[1];
-    $PublishersController->delete($publishersId);
-} elseif ($url == '/loans/dashboard' || $url == '/') {
-
+if ($url == '/loans/dashboard' || $url == '/') {
     $LoansController->dashboard();
 } elseif ($url == '/loans/index' && $requestMethod == 'GET') {
     $LoansController->index();
@@ -51,7 +32,23 @@ if ($url == '/publishers/dashboard' || $url == '/') {
 } elseif (preg_match('/\/loans\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $loansId = $matches[1];
     $LoansController->delete($loansId);
-
+}elseif ($url == '/publishers/dashboard' || $url == '/') {
+    $PublishersController->dashboard();
+} elseif ($url == '/publishers/index' && $requestMethod == 'GET') {
+    $PublishersController->index();
+} elseif ($url == '/publishers/create' && $requestMethod == 'GET') {
+    $PublishersController->create();
+} elseif ($url == '/publishers/store' && $requestMethod == 'POST') {
+    $PublishersController->store();
+} elseif (preg_match('/\/publishers\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $publishersId = $matches[1];
+    $PublishersController->edit($publishersId);
+} elseif (preg_match('/\/publishers\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
+    $publishersId = $matches[1];
+    $PublishersController->update($publishersId, $_POST);
+} elseif (preg_match('/\/publishers\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+    $publishersId = $matches[1];
+    $PublishersController->delete($publishersId);
 } elseif ($url == '/user/dashboard' || $url == '/') {
     $UserController->dashboard();
 } elseif ($url == '/user/index' && $requestMethod == 'GET') {
