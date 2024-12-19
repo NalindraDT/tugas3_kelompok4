@@ -1,10 +1,12 @@
 <?php
 // routes.php
 
+
 require_once 'app/controllers/PublishersController.php';
-// require_once 'app/controllers/LoansController.php';
-// require_once 'app/controllers/UserController.php';
-// require_once 'app/controllers/Books.php';
+require_once 'app/controllers/LoansController.php';
+
+require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/Books.php';
 
 // $controller = new BooksController();
 // $UserController = new UserController();
@@ -12,6 +14,7 @@ require_once 'app/controllers/PublishersController.php';
 $PublishersController = new PublishersController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
+
 
 if ($url == '/publishers/dashboard' || $url == '/') {
     $PublishersController->dashboard();
@@ -31,6 +34,7 @@ if ($url == '/publishers/dashboard' || $url == '/') {
     $publishersId = $matches[1];
     $PublishersController->delete($publishersId);
 } elseif ($url == '/loans/dashboard' || $url == '/') {
+
     $LoansController->dashboard();
 } elseif ($url == '/loans/index' && $requestMethod == 'GET') {
     $LoansController->index();
@@ -47,6 +51,7 @@ if ($url == '/publishers/dashboard' || $url == '/') {
 } elseif (preg_match('/\/loans\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $loansId = $matches[1];
     $LoansController->delete($loansId);
+
 } elseif ($url == '/user/dashboard' || $url == '/') {
     $UserController->dashboard();
 } elseif ($url == '/user/index' && $requestMethod == 'GET') {
