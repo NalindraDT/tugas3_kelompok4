@@ -1,6 +1,6 @@
 
 ### Nama: Nalindra Driyawan Thahai
-### NPM: 21090069
+### NPM: 230202070
 ### Kelas: TI-2C
 
 <HR>
