@@ -720,6 +720,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </html>
 ```
 ### Deskripsi
-
+Form "Edit Buku" adalah antarmuka pengguna untuk memperbarui entri buku yang sudah ada dalam sistem. Form ini dirancang untuk memberikan pengalaman pengguna yang intuitif dengan validasi dan interaktivitas yang memadai.
 ### Fungsi Utama
-
+- Mengedit data buku
+- Konfirmasi penyimpanan
