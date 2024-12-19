@@ -2,6 +2,8 @@
 
 ## Informasi Umum
 Proyek ini merupakan bagian dari Tugas UAS Mata Kuliah Praktikum Pemrograman WEB 2 yang dilakukan oleh kelompok 4 kelas TI-2C Politeknik Negeri Cilacap <br>
+Anggota kelompok 4 :
+1. Gerin Nurul Ardriyani (230202061)
 
 ## Deskripsi Proyek
 Proyek ini merupakan Sistem Pengelolaan Perpustakaan Digital berbasis web yang dirancang menggunakan arsitektur Model-View-Controller (MVC) dengan menerapkan konsep Pemrograman Berorientasi Objek (OOP). Aplikasi ini bertujuan untuk mempermudah pengelolaan koleksi buku, pengguna, serta aktivitas peminjaman dan pengembalian dalam perpustakaan secara digital.
@@ -9,13 +11,13 @@ Proyek ini merupakan Sistem Pengelolaan Perpustakaan Digital berbasis web yang d
 ## Tujuan
 Tujuan dari praktikum ini adalah untuk memberikan pemahaman yang lebih baik tentang arsitektur MVC dalam pengembangan aplikasi web dan untuk meningkatkan kemampuan mahasiswa dalam menerapkan konsep OOP serta melakukan operasi CRUD (Create, Read, Update, Delete) pada data.
 
-## 1. Membuat Tabel Publishers dalam Database '2C_klp4' <br>
+## Membuat Tabel Publishers dalam Database '2C_klp4' <br>
 ![Screenshot 2024-12-18 212352](https://github.com/user-attachments/assets/f31659e8-72cd-4ece-a724-94439b02cf31)
  <br>
 Tabel ini digunakan untuk mencatat informasi tentang penerbit buku. Data dalam tabel ini memuat nama penerbit, informasi kontak, dan alamat, sehingga perpustakaan dapat dengan mudah melacak sumber buku yang diterbitkan. Informasi penerbit sering kali digunakan untuk keperluan pencatatan administrasi atau saat ingin menambah koleksi baru. Hubungan antara tabel penerbit dengan tabel buku memastikan setiap koleksi buku memiliki data penerbit yang valid, memudahkan dalam pengelolaan dan pelaporan koleksi. 
 <br>
 
-## 2. Models
+## 1. Models
 Script di bawah digunakan untuk mengelola data dalam tabel `publishers` pada database. Kelas ini terhubung ke database melalui konfigurasi di file eksternal dan menyediakan metode CRUD (Create, Read, Update, Delete). Metode `getAllPublishers` mengambil semua data penerbit, sedangkan `find` mencari data berdasarkan ID tertentu. Metode `add` digunakan untuk menambahkan data penerbit baru, sementara `update` memperbarui data penerbit berdasarkan ID, dan `delete` menghapus data penerbit berdasarkan ID. Seluruh operasi menggunakan PDO (PHP Data Objects) dengan parameter yang di-bind untuk menjaga keamanan dari SQL injection.
 ``` <?php
 // app/models/Publishers.php
@@ -71,71 +73,7 @@ class Publishers {
 }
 ```
 
-## 3. Controllers
-Script di bawah ini adalah kelas `PublishersController` yang merupakan bagian dari pola arsitektur MVC (Model-View-Controller), bertugas menangani logika aplikasi terkait pengelolaan data penerbit. Controller ini menggunakan model `Publishers` untuk berinteraksi dengan database dan menyediakan berbagai metode seperti `dashboard` dan `index` untuk menampilkan data penerbit, `create` untuk memuat formulir penambahan data, `store` untuk menyimpan data baru, serta `edit` dan `update` untuk mengedit data yang sudah ada. Selain itu, terdapat metode `delete` untuk menghapus data penerbit berdasarkan ID. Controller ini juga mengarahkan pengguna ke halaman yang sesuai setelah setiap operasi, memisahkan logika bisnis dari tampilan (View) dengan memuat file tampilan yang relevan.
-``` <?php
-// app/controllers/PublishersController.php
-require_once '../app/models/Publishers.php';
-
-class PublishersController {
-    private $publishersModel;
-
-    public function __construct() {
-        $this->publishersModel = new Publishers();
-    }
-
-    public function dashboard() {
-        $publishers = $this->publishersModel->getAllPublishers();
-        require_once '../app/views/dashboard.php';
-
-    }
-    public function index() {
-        $publishers = $this->publishersModel->getAllPublishers();
-        require_once '../app/views/publishers/index.php';
-
-    }
-
-    public function create() {
-        require_once '../app/views/publishers/create.php';
-    }
-
-    public function store() {
-        $id_penerbit = $_POST['id_penerbit'];
-        $nama_penerbit = $_POST['nama_penerbit'];
-        $alamat = $_POST['alamat'];
-        $kontak = $_POST['kontak'];
-        $this->publishersModel->add($id_penerbit, $nama_penerbit, $alamat, $kontak);
-        header('Location: /publishers/index');
-    }
-    // Show the edit form with the publishers data
-    public function edit($id_penerbit) {
-        $publishers = $this->publishersModel->find($id_penerbit); // Assume find() gets publishers by ID
-        require_once __DIR__ . '/../views/publishers/edit.php';
-    }
-
-    // Process the update request
-    public function update($id_penerbit, $data) {
-        $updated = $this->publishersModel->update($id_penerbit, $data);
-        if ($updated) {
-            header("Location: /publishers/index"); // Redirect to user list
-        } else {
-            echo "Failed to update publishers.";
-        }
-    }
-
-    // Process delete request
-    public function delete($id_penerbit) {
-        $deleted = $this->publishersModel->delete($id_penerbit);
-        if ($deleted) {
-            header("Location: /publishers/index"); // Redirect to user list
-        } else {
-            echo "Failed to delete publishers.";
-        }
-    }
-}
-```
-
-## 4. Views - Create
+## 2. Views - Create
 Script di bawah ini adalah sebuah halaman formulir HTML untuk menambahkan data penerbit menggunakan framework CSS Tailwind dan ikon Font Awesome. Formulir ini terdiri dari tiga input utama: nama penerbit, alamat, dan kontak, yang masing-masing memiliki ikon, placeholder dinamis, dan validasi wajib diisi (atribut `required`). Tampilan formulir dirancang responsif dengan tata letak modern menggunakan komponen seperti bayangan, animasi hover, dan border dinamis. Selain itu, terdapat tombol "Back" untuk kembali ke halaman sebelumnya dan tombol "Add" untuk mengirim data ke server melalui metode POST ke endpoint `/publishers/store`. Halaman ini juga dilengkapi dengan footer sederhana yang mencantumkan informasi hak cipta dan kontak email kelompok pengembang. Gambar dekoratif hanya ditampilkan pada layar besar untuk mempercantik tampilan.
 ```<!-- app/views/publishers/create.php -->
 <!DOCTYPE html>
@@ -583,5 +521,80 @@ document.addEventListener('DOMContentLoaded', function() {
 </html>
 ```
 
+## 3. Controllers
+Script di bawah ini adalah kelas `PublishersController` yang merupakan bagian dari pola arsitektur MVC (Model-View-Controller), bertugas menangani logika aplikasi terkait pengelolaan data penerbit. Controller ini menggunakan model `Publishers` untuk berinteraksi dengan database dan menyediakan berbagai metode seperti `dashboard` dan `index` untuk menampilkan data penerbit, `create` untuk memuat formulir penambahan data, `store` untuk menyimpan data baru, serta `edit` dan `update` untuk mengedit data yang sudah ada. Selain itu, terdapat metode `delete` untuk menghapus data penerbit berdasarkan ID. Controller ini juga mengarahkan pengguna ke halaman yang sesuai setelah setiap operasi, memisahkan logika bisnis dari tampilan (View) dengan memuat file tampilan yang relevan.
+``` <?php
+// app/controllers/PublishersController.php
+require_once '../app/models/Publishers.php';
 
+class PublishersController {
+    private $publishersModel;
 
+    public function __construct() {
+        $this->publishersModel = new Publishers();
+    }
+
+    public function dashboard() {
+        $publishers = $this->publishersModel->getAllPublishers();
+        require_once '../app/views/dashboard.php';
+
+    }
+    public function index() {
+        $publishers = $this->publishersModel->getAllPublishers();
+        require_once '../app/views/publishers/index.php';
+
+    }
+
+    public function create() {
+        require_once '../app/views/publishers/create.php';
+    }
+
+    public function store() {
+        $id_penerbit = $_POST['id_penerbit'];
+        $nama_penerbit = $_POST['nama_penerbit'];
+        $alamat = $_POST['alamat'];
+        $kontak = $_POST['kontak'];
+        $this->publishersModel->add($id_penerbit, $nama_penerbit, $alamat, $kontak);
+        header('Location: /publishers/index');
+    }
+    // Show the edit form with the publishers data
+    public function edit($id_penerbit) {
+        $publishers = $this->publishersModel->find($id_penerbit); // Assume find() gets publishers by ID
+        require_once __DIR__ . '/../views/publishers/edit.php';
+    }
+
+    // Process the update request
+    public function update($id_penerbit, $data) {
+        $updated = $this->publishersModel->update($id_penerbit, $data);
+        if ($updated) {
+            header("Location: /publishers/index"); // Redirect to user list
+        } else {
+            echo "Failed to update publishers.";
+        }
+    }
+
+    // Process delete request
+    public function delete($id_penerbit) {
+        $deleted = $this->publishersModel->delete($id_penerbit);
+        if ($deleted) {
+            header("Location: /publishers/index"); // Redirect to user list
+        } else {
+            echo "Failed to delete publishers.";
+        }
+    }
+}
+```
+
+# TABEL PUBLISHERS
+
+## Halaman Utama
+![alt text](<Screenshot 2024-12-19 131847.png>) 
+
+## Tampilan Daftar Data Penerbit
+![alt text](<Screenshot 2024-12-19 132232.png>)
+
+## Tampilan Tambah Data Penerbit
+![alt text](<Screenshot 2024-12-19 132406.png>)
+
+## Tampilan Edit Data Penerbit
+![alt text](<Screenshot 2024-12-19 132539.png>)

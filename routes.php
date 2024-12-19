@@ -8,9 +8,9 @@ require_once 'app/controllers/LoansController.php';
 require_once 'app/controllers/UserController.php';
 require_once 'app/controllers/Books.php';
 
-// $controller = new BooksController();
-// $UserController = new UserController();
-// $LoansController = new LoansController();
+$controller = new BooksController();
+$UserController = new UserController();
+$LoansController = new LoansController();
 $PublishersController = new PublishersController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
